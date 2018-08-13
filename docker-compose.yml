@@ -10,3 +10,5 @@ services:
     environment:
       NETDATA_PORT: "${NETDATA_PORT}"
     restart: always
+    ports:
+      - 19999:19999
