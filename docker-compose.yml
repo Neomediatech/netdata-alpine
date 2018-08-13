@@ -1,11 +1,12 @@
 version: '3.4'
 
-netdata:
-  image: firehol/netdata:alpine
-  volumes:
-  - /srv/data/docker/containers/netdata/config/netdata.conf:/etc/netdata/netdata.conf
-  - /srv/data/docker/containers/netdata/config/stream.conf:/etc/netdata/stream.conf
-  - /srv/data/docker/containers/netdata/data:/var/cache/netdata
-  environment:
-    NETDATA_PORT: "${NETDATA_PORT}"
-  restart: always
+services:
+  netdata:
+    image: firehol/netdata:alpine
+    volumes:
+    - /srv/data/docker/containers/netdata/config/netdata.conf:/etc/netdata/netdata.conf
+    - /srv/data/docker/containers/netdata/config/stream.conf:/etc/netdata/stream.conf
+    - /srv/data/docker/containers/netdata/data:/var/cache/netdata
+    environment:
+      NETDATA_PORT: "${NETDATA_PORT}"
+    restart: always
