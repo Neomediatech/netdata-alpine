@@ -9,7 +9,7 @@ services:
     - /srv/data/docker/containers/netdata/data:/var/cache/netdata
     environment:
       NETDATA_PORT: "${NETDATA_PORT}"
-    restart: always
+    #restart: always
     ports:
       - 19999:19999
     deploy:
