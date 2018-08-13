@@ -12,3 +12,11 @@ services:
     restart: always
     ports:
       - 19999:19999
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2G
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
